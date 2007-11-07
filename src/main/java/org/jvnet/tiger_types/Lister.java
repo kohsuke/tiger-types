@@ -87,6 +87,12 @@ public abstract class Lister<T> {
      * @param c
      *      The erasure version of 't'. This is taken
      *      as a parameter as a performance optimizaiton.
+     *
+     * @return
+     *      null if the given type doesn't look like a collection.
+     * @throws IllegalArgumentException
+     *      if the given type does look like a collection yet this implementation
+     *      is not capable of how to handle it.
      */
     public static <T> Lister<T> create(Class<T> c, Type t) {
         if(c.isArray()) {
@@ -136,7 +142,7 @@ public abstract class Lister<T> {
             };
         }
 
-        throw new IllegalArgumentException("Don't know how to handle "+c);
+        return null;
     }
 
     private static IllegalAccessError toError(IllegalAccessException e) {
