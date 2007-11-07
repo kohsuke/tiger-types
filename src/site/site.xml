@@ -8,8 +8,12 @@
 
   <body>
     <menu name="tiger-types">
-      <item name="Introduction" href="index.html"/>
-      <item name="Download" href="https://maven2-repository.dev.java.net/source/browse/maven2-repository/trunk/www/repository/org/jvnet/tiger-types/"/>
+      <item name="Introduction" href="index.html" />
+      <item name="Javadoc" href="/nonav/apidocs/" />
+      <item name="Download" href="https://maven2-repository.dev.java.net/source/browse/maven2-repository/trunk/www/repository/org/jvnet/tiger-types/" />
+      <item name="Mailing list" href="https://tiger-types.dev.java.net/servlets/ProjectMailingListList" />
+      <item name="Issue tracker" href="https://tiger-types.dev.java.net/servlets/ProjectIssues" />
+      <item name="Subversion" href="https://tiger-types.dev.java.net/source/browse/tiger-types/" />
     </menu>
 
     ${reports}
