@@ -15,8 +15,5 @@
       <item name="Issue tracker" href="https://tiger-types.dev.java.net/servlets/ProjectIssues" />
       <item name="Subversion" href="https://tiger-types.dev.java.net/source/browse/tiger-types/" />
     </menu>
-
-    ${reports}
-
   </body>
 </project>
