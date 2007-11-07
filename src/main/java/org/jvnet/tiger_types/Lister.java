@@ -50,22 +50,29 @@ import java.util.List;
  * @author Kohsuke Kawaguchi
  */
 public abstract class Lister<T> {
+    /**
+     * Type of the individual item
+     */
     public final Class itemType;
+    public final Type itemGenericType;
+
     protected final Collection r;
 
-    protected Lister(Class itemType) {
-        this(itemType,new ArrayList());
+    protected Lister(Class itemType, Type itemGenericType) {
+        this(itemType,itemGenericType,new ArrayList());
     }
 
-    protected Lister(Class itemType, Collection r) {
+    protected Lister(Class itemType, Type itemGenericType, Collection r) {
         this.itemType = itemType;
+        this.itemGenericType = itemGenericType;
         this.r = r;
     }
 
-    void add(Object o) {
+    public void add(Object o) {
         r.add(o);
     }
-    abstract T toCollection();
+    
+    public abstract T toCollection();
 
     /**
      * Creates a {@link Lister} instance that produces the given type.
@@ -84,8 +91,9 @@ public abstract class Lister<T> {
     public static <T> Lister<T> create(Class<T> c, Type t) {
         if(c.isArray()) {
             // array
-            return new Lister(c.getComponentType()) {
-                Object toCollection() {
+            Class<?> ct = c.getComponentType();
+            return new Lister(ct,ct) {
+                public Object toCollection() {
                     return r.toArray((Object[])Array.newInstance(itemType,r.size()));
                 }
             };
@@ -108,6 +116,7 @@ public abstract class Lister<T> {
                         }
                     }
                 }
+                throw new IllegalArgumentException("Don't know how to instanciate "+c);
             } catch (IllegalAccessException e) {
                 throw toError(e);
             }
@@ -120,8 +129,8 @@ public abstract class Lister<T> {
             else
                 itemType = Object.class;
 
-            return new Lister(Types.erasure(itemType)) {
-                Object toCollection() {
+            return new Lister(Types.erasure(itemType),itemType,items) {
+                public Object toCollection() {
                     return r;
                 }
             };
