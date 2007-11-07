@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<project name="Type arithmetic library for Java5">
+  <skin>
+    <groupId>org.jvnet.maven-javanet-skin</groupId>
+    <artifactId>maven-javanet-skin</artifactId>
+    <version>1.0</version>
+  </skin>
+
+  <body>
+    <menu name="tiger-types">
+      <item name="Introduction" href="index.html"/>
+      <item name="Download" href="https://maven2-repository.dev.java.net/source/browse/maven2-repository/trunk/www/repository/org/jvnet/tiger-types/"/>
+    </menu>
+
+    ${reports}
+
+  </body>
+</project>
