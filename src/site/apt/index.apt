@@ -5,3 +5,19 @@ What is this?
     <<<Collection\<String\>>>> but not <<<Collection\<Object\>>>>, you can compute
     the erasure of <<<java.lang.reflect.Type>>>, or you can determine the array
     component type <<<T>>> from <<<A\[T\]>>>
+
+How to use?
+
+    If you are using Maven, put the following dependency in your POM:
+
+--------------------
+<dependency>
+  <groupId>org.jvnet</groupId>
+  <artifactId>tiger-types</artifactId>
+  <version>RELEASE</version>
+</dependency>
+--------------------
+
+    Otherwise just download the jar and put that in your classpath.
+
+
