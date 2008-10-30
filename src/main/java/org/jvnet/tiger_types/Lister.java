@@ -105,7 +105,7 @@ public abstract class Lister<T> {
             };
         }
         if(Collection.class.isAssignableFrom(c)) {
-            Collection items;
+            Collection items=null;
             try {
                 items = (Collection)c.newInstance();
             } catch (InstantiationException e) {
@@ -122,7 +122,8 @@ public abstract class Lister<T> {
                         }
                     }
                 }
-                throw new IllegalArgumentException("Don't know how to instanciate "+c);
+                if(items==null)
+                    throw new IllegalArgumentException("Don't know how to instanciate "+c);
             } catch (IllegalAccessException e) {
                 throw toError(e);
             }
