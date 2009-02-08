@@ -352,19 +352,38 @@ public class Types {
     /**
      * Gets the i-th type argument from a parameterized type.
      *
-     * For example, {@code getTypeArgument([Map<Integer,String>],0)=Integer}
+     * <p>
+     * Unlike {@link #getTypeArgument(Type, int, Type)}, this method
+     * throws {@link IllegalArgumentException} if the given type is
+     * not parameterized.
+     */
+    public static Type getTypeArgument(Type type, int i) {
+        Type r = getTypeArgument(type, i, null);
+        if(r==null)
+            throw new IllegalArgumentException();
+        return r;
+    }
+
+    /**
+     * Gets the i-th type argument from a parameterized type.
      *
-     * @throws IllegalArgumentException
-     *      If t is not a parameterized type
+     * <p>
+     * For example, {@code getTypeArgument([Map<Integer,String>],0)=Integer}
+     * If the given type is not a parameterized type, returns the specified
+     * default value.
+     *
+     * <p>
+     * This is convenient for handling raw types and parameterized types uniformly.
+     *
      * @throws IndexOutOfBoundsException
      *      If i is out of range.
      */
-    public static Type getTypeArgument(Type type, int i) {
+    public static Type getTypeArgument(Type type, int i, Type defaultValue) {
         if (type instanceof ParameterizedType) {
             ParameterizedType p = (ParameterizedType) type;
             return fix(p.getActualTypeArguments()[i]);
         } else
-            throw new IllegalArgumentException();
+            return defaultValue;
     }
 
     /**
