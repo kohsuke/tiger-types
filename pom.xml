@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.jvnet</groupId>
   <artifactId>tiger-types</artifactId>
-  <version>1.4-SNAPSHOT</version>
+  <version>1.3-SNAPSHOT</version>
 
   <name>Type arithmetic library for Java5</name>
   
