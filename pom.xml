@@ -23,7 +23,7 @@
     <repository>
       <id>java.net-maven2-repository</id>
       <uniqueVersion>false</uniqueVersion>
-      <url>java-net:/maven2-repository/trunk/www/repository/</url>
+      <url>java-net:/maven2-repository/trunk/repository/</url>
     </repository>
     <site>
       <id>tiger-types-www</id>
