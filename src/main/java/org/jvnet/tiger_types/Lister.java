@@ -42,6 +42,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
+import java.util.EnumSet;
 
 /**
  * Abstracts away the process of creating a collection (array, {@link List}, etc)
@@ -105,6 +106,14 @@ public abstract class Lister<T> {
             };
         }
         if(Collection.class.isAssignableFrom(c)) {
+            final Type col = Types.getBaseClass(t, Collection.class);
+
+            final Type itemType;
+            if (col instanceof ParameterizedType)
+                itemType = Types.getTypeArgument(col, 0);
+            else
+                itemType = Object.class;
+
             Collection items=null;
             try {
                 items = (Collection)c.newInstance();
@@ -122,19 +131,15 @@ public abstract class Lister<T> {
                         }
                     }
                 }
+                // EnumSet
+                if(items==null && c==EnumSet.class) {
+                    items = EnumSet.noneOf(Types.erasure(itemType).asSubclass(Enum.class));
+                }
                 if(items==null)
                     throw new IllegalArgumentException("Don't know how to instanciate "+c);
             } catch (IllegalAccessException e) {
                 throw toError(e);
             }
-
-            Type col = Types.getBaseClass(t, Collection.class);
-
-            Type itemType;
-            if (col instanceof ParameterizedType)
-                itemType = Types.getTypeArgument(col, 0);
-            else
-                itemType = Object.class;
 
             return new Lister(Types.erasure(itemType),itemType,items) {
                 public Object toCollection() {
