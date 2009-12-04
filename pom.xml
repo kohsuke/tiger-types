@@ -2,14 +2,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.jvnet</groupId>
   <artifactId>tiger-types</artifactId>
-  <version>1.3</version>
+  <version>1.4-SNAPSHOT</version>
 
   <name>Type arithmetic library for Java5</name>
   
   <scm>
-    <connection>scm:svn:https://svn.dev.java.net/svn/tiger-types/tags/tiger-types-1.3</connection>
-    <developerConnection>scm:svn:https://svn.dev.java.net/svn/tiger-types/tags/tiger-types-1.3</developerConnection>
-    <url>https://tiger-types.dev.java.net/source/browse/tiger-types/tags/tiger-types-1.3</url>
+    <connection>scm:svn:https://svn.dev.java.net/svn/tiger-types/trunk/tiger-types</connection>
+    <developerConnection>scm:svn:https://svn.dev.java.net/svn/tiger-types/trunk/tiger-types</developerConnection>
+    <url>https://tiger-types.dev.java.net/source/browse/tiger-types/trunk/tiger-types/</url>
   </scm>
 
   <repositories>
