@@ -1,4 +1,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <parent>
+    <groupId>net.java</groupId>
+    <artifactId>jvnet-parent</artifactId>
+    <version>1</version>
+  </parent>
+
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.jvnet</groupId>
   <artifactId>tiger-types</artifactId>
@@ -7,29 +13,10 @@
   <name>Type arithmetic library for Java5</name>
   
   <scm>
-    <connection>scm:svn:https://svn.dev.java.net/svn/tiger-types/trunk/tiger-types</connection>
-    <developerConnection>scm:svn:https://svn.dev.java.net/svn/tiger-types/trunk/tiger-types</developerConnection>
-    <url>https://tiger-types.dev.java.net/source/browse/tiger-types/trunk/tiger-types/</url>
+    <connection>scm:svn:https://svn.java.net/svn/tiger-types~svn/trunk/tiger-types</connection>
+    <developerConnection>scm:svn:https://svn.java.net/svn/tiger-types~svn/trunk/tiger-types</developerConnection>
+    <url>http://java.net/projects/tiger-types/sources/svn/show</url>
   </scm>
-
-  <repositories>
-    <repository>
-      <id>java.net2</id>
-      <url>https://maven2-repository.dev.java.net/nonav/repository</url>
-    </repository>
-  </repositories>
-
-  <distributionManagement>
-    <repository>
-      <id>java.net-maven2-repository</id>
-      <uniqueVersion>false</uniqueVersion>
-      <url>java-net:/maven2-repository/trunk/repository/</url>
-    </repository>
-    <site>
-      <id>tiger-types-www</id>
-      <url>java-net:/tiger-types/trunk/www/</url>
-    </site>
-  </distributionManagement>
 
   <build>
     <plugins>
@@ -43,19 +30,22 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-idea-plugin</artifactId>
+        <version>2.2</version>
         <configuration>
           <jdkName>JDK1.5</jdkName>
           <downloadSources>true</downloadSources>
         </configuration>
       </plugin>
+      <plugin>
+          <groupId>org.apache.maven.plugins</groupId>                           
+          <artifactId>maven-release-plugin</artifactId>                         
+          <configuration>                                                       
+              <mavenExecutorId>forked-path</mavenExecutorId>                
+              <useReleaseProfile>false</useReleaseProfile>                  
+              <arguments>${release.arguments}</arguments>
+          </configuration>                                                      
+      </plugin>                    
     </plugins>
-    <extensions>
-      <extension>
-        <groupId>org.jvnet.wagon-svn</groupId>
-        <artifactId>wagon-svn</artifactId>
-        <version>1.9</version>
-      </extension>
-    </extensions>
   </build>
   
   <dependencies>
