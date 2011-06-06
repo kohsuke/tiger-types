@@ -8,14 +8,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.jvnet</groupId>
   <artifactId>tiger-types</artifactId>
-  <version>1.4-SNAPSHOT</version>
+  <version>1.4</version>
 
   <name>Type arithmetic library for Java5</name>
   
   <scm>
-    <connection>scm:svn:https://svn.java.net/svn/tiger-types~svn/trunk/tiger-types</connection>
-    <developerConnection>scm:svn:https://svn.java.net/svn/tiger-types~svn/trunk/tiger-types</developerConnection>
-    <url>http://java.net/projects/tiger-types/sources/svn/show</url>
+    <connection>scm:svn:https://svn.java.net/svn/tiger-types~svn/tags/tiger-types-1.4</connection>
+    <developerConnection>scm:svn:https://svn.java.net/svn/tiger-types~svn/tags/tiger-types-1.4</developerConnection>
+    <url>http://java.net/projects/tiger-types/sources/svn/show/tags/tiger-types-1.4</url>
   </scm>
 
   <build>
