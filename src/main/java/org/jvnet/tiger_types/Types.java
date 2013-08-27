@@ -402,6 +402,9 @@ public class Types {
         return false;
     }
 
+    /**
+     * Tests if the given method overrides another method defined in 'base' (or its super types.)
+     */
     public static boolean isOverriding(Method method, Class base) {
         // this isn't actually correct,
         // as the JLS considers
