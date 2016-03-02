@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.jvnet</groupId>
   <artifactId>tiger-types</artifactId>
-  <version>2.2-SNAPSHOT</version>
+  <version>2.2</version>
 
   <name>Type arithmetic library for Java5</name>
   
@@ -10,7 +10,7 @@
     <connection>scm:git:git@github.com/kohsuke/${project.artifactId}.git</connection>
     <developerConnection>scm:git:ssh://git@github.com/kohsuke/${project.artifactId}.git</developerConnection>
     <url>http://${project.artifactId}.kohsuke.org/</url>
-    <tag>HEAD</tag>
+    <tag>tiger-types-2.2</tag>
   </scm>
 
   <build>
