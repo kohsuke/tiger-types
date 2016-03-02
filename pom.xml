@@ -64,4 +64,12 @@
       </plugin>
     </plugins>
   </reporting>
+
+  <licenses>
+    <license>
+      <name>CDDL/GPLv2 dual license</name>
+      <url>http://www.opensource.org/licenses/cddl1.php</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
 </project>
