@@ -1,0 +1,24 @@
+-classpath
+'/home/kohsuke/ws/tiger-types/target/checkout/target/classes'
+-encoding
+'UTF-8'
+-protected
+-sourcepath
+'/home/kohsuke/ws/tiger-types/target/checkout/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2016. All Rights Reserved.'
+-charset
+'UTF-8'
+-d
+'/home/kohsuke/ws/tiger-types/target/checkout/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'Type arithmetic library for Java5 2.0 API'
+-link
+'http://java.sun.com/j2se/1.5.0/docs/api'
+-use
+-version
+-windowtitle
+'Type arithmetic library for Java5 2.0 API'

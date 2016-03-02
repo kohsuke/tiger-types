@@ -1,0 +1,24 @@
+-classpath
+'/home/kohsuke/ws/tiger-types/target/checkout/target/classes:/home/kohsuke/ws/tiger-types/target/checkout/target/test-classes:/files/kohsuke/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/files/kohsuke/.m2/repository/junit/junit/4.12/junit-4.12.jar'
+-encoding
+'UTF-8'
+-protected
+-sourcepath
+'/home/kohsuke/ws/tiger-types/target/checkout/src/test/java'
+-author
+-bottom
+'Copyright &#169; 2016. All Rights Reserved.'
+-charset
+'UTF-8'
+-d
+'/home/kohsuke/ws/tiger-types/target/checkout/target/site/testapidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'Type arithmetic library for Java5 2.0 Test API'
+-link
+'http://java.sun.com/j2se/1.5.0/docs/api'
+-use
+-version
+-windowtitle
+'Type arithmetic library for Java5 2.0 Test API'

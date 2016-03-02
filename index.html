@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+
+
+
+
+
+
+
+
+<html>
+  <head>
+    <title>Type arithmetic library for Java5 - </title>
+    <style type="text/css" media="all">
+      @import url("./css/maven-base.css");
+      @import url("./css/maven-theme.css");
+      @import url("./css/site.css");
+    </style>
+    <link rel="stylesheet" href="./css/print.css" type="text/css" media="print" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      </head>
+  <body class="composite">
+    <!-- TODO: move this into JavaScript to patch the skin
+      <div class="xright">  </div>
+    -->
+    <div id="leftColumn">
+      <div id="navcolumn">
+             <dl class=navgroup>
+        <dt>tiger-types</dt>
+        <dd><ul>
+              
+    <li class="none">
+              <strong>Introduction</strong>
+        </li>
+              
+    <li class="none">
+              <a href="nonav/apidocs/">Javadoc</a>
+        </li>
+              
+    <li class="none">
+              <a href="https://maven2-repository.dev.java.net/source/browse/maven2-repository/trunk/www/repository/org/jvnet/tiger-types/">Download</a>
+        </li>
+              
+    <li class="none">
+              <a href="https://tiger-types.dev.java.net/servlets/ProjectMailingListList">Mailing list</a>
+        </li>
+              
+    <li class="none">
+              <a href="https://tiger-types.dev.java.net/servlets/ProjectIssues">Issue tracker</a>
+        </li>
+              
+    <li class="none">
+              <a href="https://tiger-types.dev.java.net/source/browse/tiger-types/">Subversion</a>
+        </li>
+          </ul></dd>
+    </dl>
+        </div>
+      <script>
+        // replace the java.net project tools with the navigation bar from Maven.
+        // also get rid of "Get Involved" thingie too, while we are at it
+        var pt = document.getElementById("projecttools");
+        var nv = document.getElementById("navcolumn");
+        
+        while(pt.previousSibling!=null)
+          pt.parentNode.removeChild(pt.previousSibling);
+        
+        pt.parentNode.insertBefore(nv,pt);
+        pt.parentNode.removeChild(pt);
+      </script>
+      <script>
+        // kill "description" h3 bar
+        var ld = document.getElementById("longdescription");
+        if(ld!=null) {
+          for( n=ld.firstChild; n!=null; n=n.nextSibling ) {
+            if(n.nodeType==1 && n.innerHTML=="Description" ) {
+              n.parentNode.removeChild(n);
+              break;
+            }
+          }
+        }
+      </script>
+    </div>
+    <div id="bodyColumn">
+      <div id="contentBox">
+        <div class="section">
+<h2>What is this?<a name="What_is_this"></a></h2>
+<p>This library provides functions that perform type arithemtic over the type system of Java5. For example, you can compute that <tt>List&lt;String&gt;</tt> is a sub-type of <tt>Collection&lt;String&gt;</tt> but not <tt>Collection&lt;Object&gt;</tt>, you can compute the erasure of <tt>java.lang.reflect.Type</tt>, or you can determine the array component type <tt>T</tt> from <tt>A[T]</tt></p></div>
+<div class="section">
+<h2>How to use?<a name="How_to_use"></a></h2>
+<p>If you are using Maven, put the following dependency in your POM:</p>
+<div>
+<pre>&lt;dependency&gt;
+  &lt;groupId&gt;org.jvnet&lt;/groupId&gt;
+  &lt;artifactId&gt;tiger-types&lt;/artifactId&gt;
+  &lt;version&gt;RELEASE&lt;/version&gt;
+&lt;/dependency&gt;</pre></div>
+<p>Otherwise just download the jar and put that in your classpath.</p></div>
+      </div>
+    </div>
+    <div class="clear">
+      <hr/>
+    </div>
+    <div id="footer">
+      <div class="xright">&#169;  
+          2016
+    
+          
+  
+
+  
+  
+  &nbsp;| Last Published: 2016-03-02
+  &nbsp;| Version: 2.0
+</div>
+      <div class="clear">
+        <hr/>
+      </div>
+    </div>
+  </body>
+</html>
