@@ -110,19 +110,26 @@ public class Types {
             // not clear what I should do here
             return null;
         }
-
-        /**
-         * Replaces the type variables in {@code t} by its actual arguments.
-         *
-         * @param decl
-         *      provides a list of type variables. See {@link GenericDeclaration#getTypeParameters()}
-         * @param args
-         *      actual arguments. See {@link ParameterizedType#getActualTypeArguments()}
-         */
-        private Type bind( Type t, GenericDeclaration decl, ParameterizedType args ) {
-            return binder.visit(t,new BinderArg(decl,args.getActualTypeArguments()));
-        }
     };
+
+    /**
+     * Replaces the type variables in {@code t} by its actual values.
+     *
+     * <p>
+     * This is primarily used to resolve a method of a generic type to a concrete signature.
+     *
+     * <p>
+     * For example, binding {@code Collection<T>} with {@code T=List<String>} results in
+     * {@code Collection<List<String>>}.
+     *
+     * @param decl
+     *      provides a list of type variables. See {@link GenericDeclaration#getTypeParameters()}
+     * @param args
+     *      actual arguments. See {@link ParameterizedType#getActualTypeArguments()}
+     */
+    public static Type bind( Type t, GenericDeclaration decl, ParameterizedType args ) {
+        return binder.visit(t,new BinderArg(decl,args.getActualTypeArguments()));
+    }
 
     private static class BinderArg {
         final TypeVariable[] params;
